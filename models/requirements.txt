@@ -1,0 +1,41 @@
+• Người dùng:
+ ID
+ Email
+ Mật khẩu (mã hóa)
+ Họ tên
+ Số điện thại
+ Vai trò (người dùng/quản lý) hặc sử dụng bảng quản lý riêng
+• Cụm rạp:
+ ID
+ Tên
+ Địa chỉ
+• Rạp:
+ ID
+ Tên
+ ID cụm rạp
+ Lại rạp (2D, 3D, 4DX…)
+ Kích thước chiều ngang
+ Kích thước chiều dọc
+• Phim:
+ ID
+ Tên
+ Ngày công chiếu
+ Pster hình ảnh Thời lượng
+• Suất chiếu:
+ ID Phim, ID Rạp
+ Thời điểm bắt đầu (ngày, giờ)
+ Thời điểm kết thúc (ngày, giờ)
+ Giá vé
+• Đặt chỗ (bking):
+ ID (thay thế ID tăng dần bằng ID ngẫu nhiên, UUID)
+ ID người dùng
+ ID suất chiếu
+ Thời điểm đặt vé
+ Tổng tiền
+• Vé (ticket/vucher):
+ ID (thay thế ID tăng dần bằng ID ngẫu nhiên, UUID)
+ ID đặt chỗ
+ Mã ghế (E8)
+ (Địa chỉ ngang)
+ (Địa chỉ dọc)
+ Giá tiền
