@@ -18,11 +18,11 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `mydb`.`users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user` ;
+DROP TABLE IF EXISTS `mydb`.`users` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `mydb`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NULL,
   `password` VARCHAR(45) NOT NULL,
@@ -113,16 +113,16 @@ DROP TABLE IF EXISTS `mydb`.`booking` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`booking` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `idUser` INT NULL,
+  `idusers` INT NULL,
   `idShowTime` INT NULL,
   `timeBooking` DATETIME NULL,
   `totalPrince` INT NULL,
   PRIMARY KEY (`id`),
-  INDEX `FK_Booking_User_idx` (`idUser` ASC) VISIBLE,
+  INDEX `FK_Booking_users_idx` (`idusers` ASC) VISIBLE,
   INDEX `FK_Booking_Showtime_idx` (`idShowTime` ASC) VISIBLE,
-  CONSTRAINT `FK_Booking_User`
-    FOREIGN KEY (`idUser`)
-    REFERENCES `mydb`.`user` (`id`)
+  CONSTRAINT `FK_Booking_users`
+    FOREIGN KEY (`idusers`)
+    REFERENCES `mydb`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `FK_Booking_Showtime`
