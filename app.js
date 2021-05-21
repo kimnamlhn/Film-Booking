@@ -1,18 +1,21 @@
 const express = require('express')
-const db = require('./utils/db');
+var exphbs  = require('express-handlebars');
 const app = express()
 const port = 3000;
 
 app.use(express.static('public'))
 
-db.load('use mydb');
-const users = db.load('select * from users');
-users.then(function(rows){
-  console.log(rows);
-})
-users.catch(function(rows){
-  console.error(rows);
-})
+app.engine('hbs', exphbs({
+  defaultLayout: 'main.hbs',
+  extname: '.hbs'
+}
+));
+app.set('view engine', 'hbs');
+
+app.get('/', function (req, res) {
+    res.render('home');
+});
+
 
 
 

@@ -16,3 +16,12 @@ module.exports = {
       pool_query(`update ${tableName} set ? where ?`, [entity, condition]),
   };
   
+
+// //code test thooi
+// const users = db.load('select * from users');
+// users.then(function(rows){
+//   console.log(rows);
+// })
+// users.catch(function(rows){
+//   console.error(rows);
+// })
