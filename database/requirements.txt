@@ -26,13 +26,13 @@
  Thời điểm bắt đầu (ngày, giờ)
  Thời điểm kết thúc (ngày, giờ)
  Giá vé
-• Đặt chỗ (bking):
+• Đặt chỗ (booking):
  ID (thay thế ID tăng dần bằng ID ngẫu nhiên, UUID)
  ID người dùng
  ID suất chiếu
  Thời điểm đặt vé
  Tổng tiền
-• Vé (ticket/vucher):
+• Vé (ticket/voucher):
  ID (thay thế ID tăng dần bằng ID ngẫu nhiên, UUID)
  ID đặt chỗ
  Mã ghế (E8)

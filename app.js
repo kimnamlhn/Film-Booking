@@ -1,23 +1,20 @@
 const express = require('express')
-var exphbs  = require('express-handlebars');
 const app = express()
 const port = 3000;
 
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'));
 
-app.engine('hbs', exphbs({
-  defaultLayout: 'main.hbs',
-  extname: '.hbs'
-}
-));
-app.set('view engine', 'hbs');
 
 app.get('/', function (req, res) {
     res.render('home');
 });
 
+app.get('/about', function (req, res) {
+  res.render('about');
+});
 
-
+//middlewares
+const view = require('./middlewares/view.mdw')(app);
 
 
 
