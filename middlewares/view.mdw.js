@@ -1,6 +1,6 @@
 var exphbs  = require('express-handlebars');
 
-module.exports = (app) => {
+module.exports = function (app){
     app.engine('hbs', exphbs({
         defaultLayout: 'main.hbs',
         extname: '.hbs',
