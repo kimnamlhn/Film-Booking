@@ -8,10 +8,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.get('/about', function (req, res) {
-  res.render('about');
-});
-
 //middlewares
 require('./middlewares/view.mdw')(app);
 require('./middlewares/routes.mdw')(app);
