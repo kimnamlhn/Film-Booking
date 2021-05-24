@@ -2,10 +2,14 @@ const express = require('express')
 const app = express()
 const port = 3000;
 
+//bodyparse middware
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 
+//set static forder public
 app.use(express.static(__dirname + '/public'));
-
-
 
 
 //middlewares
