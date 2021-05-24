@@ -5,11 +5,11 @@ router.get('/', async function (req, res) {
         res.render('home');
 });
 
-router.get('/about', function (req, res) {
+router.get('/about', async function (req, res) {
         res.render('vwInfo/about');
 });
 
-router.get('/contacts', function (req, res) {
+router.get('/contacts', async function (req, res) {
         res.render('vwInfo/contacts');
 });
 
