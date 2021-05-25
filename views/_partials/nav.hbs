@@ -9,14 +9,12 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
-
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             data-toggle="dropdown" aria-expanded="false">
             Categories
           </a>
-
-
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">New Movie</a></li>
             <li><a class="dropdown-item" href="#">Most Viewed</a></li>
@@ -26,25 +24,50 @@
             <li><a class="dropdown-item" href="#">Top Rated</a></li>
           </ul>
         </li>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
-        </li>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contacts">Contacts</a>
         </li>
-        <form class="d-flex ml-3">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success ml-2" type="submit">Search</button>
-        </form>
+      </ul>
 
-        <div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link button" href="#">Login</a>
-          </li>
-        </div>
+      <form class="d-flex ml-3 mr-auto">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success ml-2" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">
+          <i class="fa fa-sign-in" aria-hidden="true"></i>
+          Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+          Register</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            data-toggle="dropdown" aria-expanded="false">
+            Welcom, <b>admin!</b>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              Account Profile</a></li>
+            <li><a class="dropdown-item" href="#">
+              <i class="fa fa-cogs" aria-hidden="true"></i>
+              Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
