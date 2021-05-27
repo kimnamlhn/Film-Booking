@@ -1,0 +1,90 @@
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <!-- Sidebar -->
+            <div class="card">
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">Admin quản lý </h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item">Quản lý cụm rạp  <span
+                                    class="float-right badge badge-light round">142</span> </a>
+                            <a href="#" class="list-group-item active">Quản lý rạp <span
+                                    class="float-right badge badge-light round">3</span> </a>
+                            <a href="#" class="list-group-item ">Quản lý phim <span
+                                    class="float-right badge badge-light round">32</span> </a>
+                            <a href="#" class="list-group-item">Quản lý suất chiếu <span
+                                    class="float-right badge badge-light round">12</span> </a>
+                            <a href="#" class="list-group-item">Thống kê doanh thu <span
+                                    class="float-right badge badge-light round">12</span> </a>
+                        </div> <!-- list-group .// -->
+                    </div>
+            </div> <!-- card.// -->
+            <!-- End of Sidebar -->
+        </div>
+        <div class="col-sm-8">
+
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách giảng viên chờ xét duyệt</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID </th>
+                                    <th scope="col">Tên tài khoản</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Chấp nhận</th>
+                                    <th scope="col">Xóa</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {{#each this.list}}
+                                <!--accept request-->
+                                <form action="/admin/teacher_manage/accept" method="post" id="frmAcceptRequest">
+                                    <input type="hidden" name="idGiangVienTam" value="{{idGiangVienTam}}">
+                                </form>
+                                <!--accept request .//-->
+                                <tr>
+                                    <th scope="row">{{idGiangVienTam}}</th>
+                                    <td>{{TenGiangVien}}</td>
+                                    <td>{{TrangThai}}</td>
+                                    <td>
+                                        <a class="icon_btn btn-sm icon_accept" href="javascript:;" role="button"
+                                            title="Accept request">
+                                            <i class="fa fa-check acceptRequest"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a name="" id="" class="icon_btn btn-sm" href="javascript:;" role="button"
+                                            title="Delete request">
+                                            <i class="fa fa-trash deleteRequest" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!--delete request-->
+                                <form action="/admin/teacher_manage/delete" method="post" id="frmDeleteRequest">
+                                    <input type="hidden" name="idGiangVienTam" value="{{idGiangVienTam}}">
+                                </form>
+                                <!--delete request.//-->
+                                {{/each}}
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
