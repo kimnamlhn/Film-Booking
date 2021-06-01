@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="/css/contacts.css">
   <link rel="stylesheet" href="/css/account.css">
   <link rel="stylesheet" href="/css/movie_manage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+  <!-- link section handlebar css  -->
+  {{{_sections.css}}}
 
 
 
@@ -49,6 +54,9 @@
   <!--end footer-->
 
 
+  <!-- link section handlebar js  -->
+  {{{_sections.js}}}
+
   <!-- Bootstrap js -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -59,6 +67,23 @@
   <script src="vendors/js/jquery.validate.min.js"></script>
   <script src="vendors/js/main.js"></script>
 
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+   
+  <script>
+    $(document).ready(function () {
+      $("#testimonial-slider").owlCarousel({
+        items: 3,
+        itemsDesktop: [1000, 3],
+        itemsDesktopSmall: [979, 2],
+        itemsTablet: [768, 2],
+        itemsMobile: [650, 1],
+        pagination: true,
+        autoPlay: true
+      });
+    });
+  </script>
 
 </body>
 

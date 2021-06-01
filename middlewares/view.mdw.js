@@ -1,4 +1,6 @@
 var exphbs  = require('express-handlebars');
+var express_handlebars_sections = require('express-handlebars-sections');
+
 
 module.exports = function (app){
     app.engine('hbs', exphbs({
@@ -6,7 +8,9 @@ module.exports = function (app){
         extname: '.hbs',
         layoutsDir: 'views/_layouts',
         partialsDir: 'views/_partials',
+        section: express_handlebars_sections()
       }
       ));
       app.set('view engine', 'hbs');
 }
+
