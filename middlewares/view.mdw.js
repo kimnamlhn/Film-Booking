@@ -8,7 +8,11 @@ module.exports = function (app){
         extname: '.hbs',
         layoutsDir: 'views/_layouts',
         partialsDir: 'views/_partials',
-        section: express_handlebars_sections()
+        helpers: {
+          section: express_handlebars_sections(),
+
+  
+        },
       }
       ));
       app.set('view engine', 'hbs');
