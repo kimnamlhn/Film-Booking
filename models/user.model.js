@@ -7,7 +7,7 @@ module.exports = {
         return db.load(`select * from ${TBL_USERS}`);
     },
     add : function(entity) {
-        return await db.add(entity, TBL_USERS);
+        return db.add(entity, TBL_USERS);
         },
     
 }
