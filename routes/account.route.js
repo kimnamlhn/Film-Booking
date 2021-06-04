@@ -14,16 +14,35 @@ router.get('/register', async function(req,res){
 
 
 router.post('/register', async function(req, res){
-    const hashPass = bcrypt.hashSync(req.body.password, 8);
+    // const hashPass = await bcrypt.hashSync(req.body.password, 8);
     const entity = {
+        idUser: null,
         email : req.body.email,
-        hashPass,
+        password : req.body.password,
         phone : req.body.phone,
         role: 1,
     }
     console.log(entity);
-    await userModel.add(entity);
+    userModel.add(entity);
     // alert('call');
+    res.render('/home')
+
+});
+router.post('/login', async function(req, res){
+    var user = await userModel.singleByUserName(req.body.username);
+    if(user == null){
+        res.render('vwAccount/login',{
+            err: 'Invalid username or password.'
+        })
+    }
+    var pass = user.password;
+    if(pass != req.body.password){
+            res.render('vwAccount/login',{
+            err: 'Invalid username or password.'
+        })
+    }
+    
+    
     res.render('/home')
 
 });
