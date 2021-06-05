@@ -34,13 +34,14 @@ router.post('/login', async function(req, res){
         res.render('vwAccount/login',{
             err: 'Invalid username or password.'
         })
-    }
+    };
+    
     var pass = user.password;
     if(pass != req.body.password){
             res.render('vwAccount/login',{
             err: 'Invalid username or password.'
         })
-    }
+    };
     
     
     res.render('/home')

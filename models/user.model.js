@@ -20,7 +20,7 @@ module.exports = {
 
     },
 
-    singleByUsername : async function(username){
+    singleByUserName: async function(username){
         const rows =  await db.load(`select * from ${TBL_USERS} where username = ${username} `);
         if(rows.length === 0){
             return null;
