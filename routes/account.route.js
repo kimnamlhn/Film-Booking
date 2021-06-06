@@ -29,22 +29,24 @@ router.post('/register', async function(req, res){
 
 });
 router.post('/login', async function(req, res){
-    var user = await userModel.singleByUserName(req.body.username);
+    var user = await userModel.singleByEmail(req.body.email);
+    console.log(user);
     if(user == null){
-        res.render('vwAccount/login',{
+        return res.render('vwAccount/login',{
             err: 'Invalid username or password.'
         })
     };
     
     var pass = user.password;
     if(pass != req.body.password){
-            res.render('vwAccount/login',{
+        return res.render('vwAccount/login',{
             err: 'Invalid username or password.'
         })
     };
     
+
     
-    res.render('/home')
+    res.redirect('/');
 
 });
 
