@@ -25,7 +25,7 @@ router.post('/register', async function(req, res){
     console.log(entity);
     userModel.add(entity);
     // alert('call');
-    res.render('/home')
+    res.redirect('/login')
 
 });
 router.post('/login', async function(req, res){
@@ -44,7 +44,6 @@ router.post('/login', async function(req, res){
         })
     };
     
-
     
     res.redirect('/');
 
