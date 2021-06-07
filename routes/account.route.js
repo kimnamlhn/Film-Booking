@@ -44,6 +44,7 @@ router.post('/login', async function(req, res){
         })
     };
     
+    delete user.password;
     req.session.authenticated = true;
     req.session.authUser = user;
     console.log(req.session.authUser);

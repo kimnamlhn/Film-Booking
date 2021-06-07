@@ -1,7 +1,8 @@
 module.exports = function (req, res, next) {
-    if (req.session.authenticated === false) {
+    if (!req.session.authenticated) {
       req.session.retUrl = req.originalUrl;
-      return res.redirect('account/login');
+      return res.redirect('/account/login');
+      return 
     }
   
     next();
