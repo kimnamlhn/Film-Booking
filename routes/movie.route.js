@@ -1,7 +1,8 @@
 const express = require('express');
+const auth = require('../middlewares/auth.mdw')
 const router = express.Router();
 
-router.get('/buy-ticket-page', async function(req,res){
+router.get('/buy-ticket-page',auth, async function(req,res){
     res.render('vwMovie/buyTicketPage')
 });
 

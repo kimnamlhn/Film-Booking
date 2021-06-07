@@ -10,8 +10,6 @@ module.exports = function (app){
         partialsDir: 'views/_partials',
         helpers: {
           section: express_handlebars_sections(),
-
-  
         },
       }
       ));
