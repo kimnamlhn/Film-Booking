@@ -20,7 +20,7 @@ module.exports = {
     },
 
     triple: async function(){
-        return await db.load(`select * from ${TBL_FIML} limit = 3`);
+        return await db.load(`select * from ${TBL_FIML} limit 3`);
     }
 
 }

@@ -1,8 +1,13 @@
 const express = require('express');
+const homeModel = require('../models/home.model');
 const router = express.Router();
 
 router.get('/', async function (req, res) {
-        res.render('home');
+        const list= await homeModel.triple();
+        console.log(list);
+        res.render('home', {
+                list: list,
+        });
 });
 
 router.get('/about', async function (req, res) {
