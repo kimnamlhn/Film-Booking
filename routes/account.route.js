@@ -14,18 +14,19 @@ router.get('/register', async function(req,res){
 
 
 router.post('/register', async function(req, res){
-    // const hashPass = await bcrypt.hashSync(req.body.password, 8);
+    const hashPass = await bcrypt.hashSync(req.body.password, 8);
     const entity = {
         idUser: null,
         email : req.body.email,
-        password : req.body.password,
+        password : hashPass,
         phone : req.body.phone,
         role: 1,
     }
     console.log(entity);
     await userModel.add(entity);
     // alert('call');
-    res.redirect('/login')
+
+    res.redirect('/');
 
 });
 router.post('/login', async function(req, res){
@@ -37,8 +38,9 @@ router.post('/login', async function(req, res){
         })
     };
     
-    var pass = user.password;
-    if(pass != req.body.password){
+    // var pass = user.password;
+    var flags = bcrypt.compareSync(req.body.password, user.password); // true
+    if(flags === false){
         return res.render('vwAccount/login',{
             err: 'Invalid username or password.'
         })

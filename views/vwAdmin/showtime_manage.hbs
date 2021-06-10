@@ -29,7 +29,7 @@
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Danh sách giảng viên chờ xét duyệt</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách lịch chiếu phim</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -37,48 +37,13 @@
                             <thead>
                                 <tr>
                                     <th scope="col">ID </th>
-                                    <th scope="col">Tên tài khoản</th>
+                                    <th scope="col">Lịch chiếu</th>
                                     <th scope="col">Trạng thái</th>
                                     <th scope="col">Chấp nhận</th>
                                     <th scope="col">Xóa</th>
 
                                 </tr>
                             </thead>
-
-                            <tbody>
-                                {{#each this.list}}
-                                <!--accept request-->
-                                <form action="/admin/teacher_manage/accept" method="post" id="frmAcceptRequest">
-                                    <input type="hidden" name="idGiangVienTam" value="{{idGiangVienTam}}">
-                                </form>
-                                <!--accept request .//-->
-                                <tr>
-                                    <th scope="row">{{idGiangVienTam}}</th>
-                                    <td>{{TenGiangVien}}</td>
-                                    <td>{{TrangThai}}</td>
-                                    <td>
-                                        <a class="icon_btn btn-sm icon_accept" href="javascript:;" role="button"
-                                            title="Accept request">
-                                            <i class="fa fa-check acceptRequest"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a name="" id="" class="icon_btn btn-sm" href="javascript:;" role="button"
-                                            title="Delete request">
-                                            <i class="fa fa-trash deleteRequest" aria-hidden="true"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!--delete request-->
-                                <form action="/admin/teacher_manage/delete" method="post" id="frmDeleteRequest">
-                                    <input type="hidden" name="idGiangVienTam" value="{{idGiangVienTam}}">
-                                </form>
-                                <!--delete request.//-->
-                                {{/each}}
-
-
-
-                            </tbody>
                         </table>
                     </div>
                 </div>

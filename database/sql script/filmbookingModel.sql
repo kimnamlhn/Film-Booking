@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `mydb`.`users` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`users` (
   `idUser` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(60) NOT NULL,
   `phone` VARCHAR(45) NULL,
   `role` INT NULL,
   PRIMARY KEY (`idUser`))
