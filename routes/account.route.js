@@ -55,6 +55,15 @@ router.post('/login', async function(req, res){
 
 });
 
+router.post('/logout', function(req, res){
+
+    req.session.authenticated = false;
+    req.session.authUser = null;
+    console.log('1');
+    res.redirect('/');
+
+});
+
 module.exports = router;
 
 

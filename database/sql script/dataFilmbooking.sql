@@ -15,14 +15,14 @@ insert into users values(NULL,'admin@gmail.com','123456',015899985356,0);
 
 
 /* data film */
-insert into film values(NULL,'Nam Le','2021-5-21','Poster');
-insert into film values(NULL,'Cuong Le','2021-06-10','Poster');
-insert into film values(NULL,'Danh Hoang','2021-06-10','Poster');
-insert into film values(NULL,'Van Dai','2021-05-10','Poster');
-insert into film values(NULL,'Nguyen Van Anh','2021-5-22','Poster');
-insert into film values(NULL,'Le Van Luyen','2021-5-27','Poster');
-insert into film values(NULL,'Nguyen The Hien','2021-5-22','Poster');
-insert into film values(NULL,'Phan Le Phuong Linh','2021-5-22','Poster');
+insert into film values(NULL,'Sống như những đoá hoa','2021-5-21','Poster');
+insert into film values(NULL,'Xác sống','2021-06-10','Poster');
+insert into film values(NULL,'Cung toả tâm ngọc','2021-06-10','Poster');
+insert into film values(NULL,'Yêu em từ cái nhìn đầu tiên','2021-05-10','Poster');
+insert into film values(NULL,'Định mệnh anh yêu em','2021-5-22','Poster');
+insert into film values(NULL,'Tiên kiếm 1','2021-5-27','Poster');
+insert into film values(NULL,'Đấu la đại lục','2021-5-22','Poster');
+insert into film values(NULL,'Nhớ em người yêu cũ','2021-5-22','Poster');
 
 /* data cineplex - cum rap */
 insert into cineplex values(NULL,'Cineplex Nam Le','Poster Q1 TP HCM');
