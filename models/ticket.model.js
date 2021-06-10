@@ -1,5 +1,5 @@
 const db = require('../utils/db');
-const TBL_TICKET = 'film';
+const TBL_TICKET = 'ticket';
 
 module.exports = {
 
@@ -20,13 +20,7 @@ module.exports = {
 
     },
 
-    singleById: async function(idTicket){
-        const rows =  await db.load(`select * from ${TBL_TICKET} where idTicket = '${idTicket}' `);
-        if(rows.length === 0){
-            return null;
-        }
-        return rows[0];
-    }
+
 
     
 }
