@@ -8,10 +8,21 @@ router.get('/buy-ticket-page',auth, async function(req,res){
 });
 
 router.post('/buy-ticket-page', async function(req,res){
-    var widthPos;
-    var heightPos;
+    var widthPos = req.body.widthPos;
+    var heightPos = req.body.heightPos;
 
+    //kiem tra ton tai
     if(widthPos == NULL || heightPos == NULL){
+        return res.render('vwMovie/buyTicketPage',{
+            err: 'Invalid postion.'
+        }) 
+    }
+
+
+    //kiem tra trung
+    var flags = ticketModel.singleByPos(widthPos,heightPos);
+
+    if(flags != NULL){
         return res.render('vwMovie/buyTicketPage',{
             err: 'Invalid postion.'
         }) 

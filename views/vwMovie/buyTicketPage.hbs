@@ -1,8 +1,16 @@
 {{#section 'js'}}
 <script>
-    $('.book-ticket').on('click', function () {
+  var widthPos, heightPos;
+  $('.book-ticket').on('click', function () {
+    $('#widthPos').val(`${widthPos}`)
+    $('#heightPos').val(`${heightPos}`)
     $('#frmBookTicket').submit();
   });
+  $('.seat').on('click', function () {
+    widthPos = Math.floor(Math.random() * 10) + 1;
+    heightPos = Math.floor(Math.random() * 10) + 1;
+  });
+
 </script>
 
 {{/section}}
@@ -274,8 +282,10 @@
       <div class="seat"></div>
     </div>
     <form action="/" method="POST" name="frmBookTicket">
-      <button type="button" name="book-ticket" class="btn btn-primary btn-book mt-2" data-toggle="button" aria-pressed="false"
-        autocomplete="off">
+      <input type="hidden" value="" name="widthPos" id="widthPos">
+      <input type="hidden" value="" name="heightPos" id="heightPos">
+      <button type="button" name="book-ticket" class="btn btn-primary btn-book mt-2" data-toggle="button"
+        aria-pressed="false" autocomplete="off">
         Book Ticket
       </button>
     </form>

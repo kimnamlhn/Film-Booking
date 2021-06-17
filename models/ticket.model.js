@@ -21,9 +21,16 @@ module.exports = {
     },
 
     bookTicket: async function(widthPos, heightPos){
-        return await db.add(`insert into ticket values(NULL, NULL, 'A1', ${widthPos}, ${heightPos},50000);`);
+        return await db.add(`insert into ticket values(NULL, NULL, 'A1', '${widthPos}', '${heightPos}',50000);`);
+    },
+    
+    singleByPos: async function(widthPos, heightPos){
+        const rows =  await db.load(`select * from ${TBL_TICKET} where widthPos = '${widthPos}' and heightPos = '${heightPos} `);
+        if(rows.length === 0){
+            return null;
+        }
+        return rows[0];
     }
-
 
     
 }
