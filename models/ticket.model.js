@@ -30,6 +30,16 @@ module.exports = {
             return null;
         }
         return rows[0];
+    }, 
+
+    listByidUser: async function(idUser){
+        const rows =  await db.load(`select * from ticket t, booking b, users u  
+                            where u.idUser = b.idUser and t.idBooking = b.idBooking and u.idUser = ${idUser}
+        `);
+        if(rows.length === 0){
+            return null;
+        }
+        return rows[0];
     }
 
     
